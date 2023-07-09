@@ -1,0 +1,57 @@
+h1,
+h2,
+h3,
+p,
+div,
+ul {
+  margin: 0;
+}
+
+p {
+  color: $fontGrey;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  max-width: 1480px;
+  margin: auto;
+}
+
+input {
+  border: none;
+}
+
+.container {
+  margin: 1px 1px;
+  padding: 10px 10px;
+}
+
+.border__line {
+  border-bottom: 3px solid $borderLine;
+  margin: 50px auto;
+  width: 70px;
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    margin: 30px 30px;
+    padding: 30px 150px 30px 150px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    padding: 30px 60px 30px 60px;
+    margin: 20px 20px;
+  }
+}
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    padding: 20px 15px 30px 15px;
+    margin: 10px 10px;
+  }
+}
