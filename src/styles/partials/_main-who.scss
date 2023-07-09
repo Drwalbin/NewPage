@@ -40,7 +40,7 @@
   &--skils {
     font-style: italic;
   }
-  &--socialmedia {
+  &__socialmedia {
     position: absolute;
     top: 0;
     left: 0;
@@ -85,7 +85,7 @@
   }
 }
 
-.icon_box {
+.profile__box__socialmedia--icon-box {
   background-color: $backgroundShadowBottom;
 
   &:hover {
