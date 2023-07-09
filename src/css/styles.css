@@ -197,16 +197,16 @@ input {
 .who__subtitle {
   font-family: "Kaushan Script", cursive;
 }
-
 .who__content {
   text-align: center;
   padding-bottom: 30px;
 }
-
 .who__profile {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .profile__box {
@@ -225,7 +225,6 @@ input {
 .profile__box--skils {
   font-style: italic;
 }
-
 .profile__box--socialmedia {
   position: absolute;
   top: 0;

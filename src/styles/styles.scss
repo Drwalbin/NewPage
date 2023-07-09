@@ -1,8 +1,8 @@
-@import "../styles/utils/_colors.scss";
-@import "../styles/utils/_fonts.scss";
-@import "../styles/utils/_base.scss";
+@import "../styles/utils/colors/_colors";
+@import "../styles/utils/base/_fonts";
+@import "../styles/utils/base/_base";
 
-@import "../styles/utils/_header.scss";
-@import "../styles/utils/_main-who.scss";
-@import "../styles/utils/_main-work.scss";
-@import "../styles/utils/_footer";
+@import "../styles/partials/_header";
+@import "../styles/partials/_main-who";
+@import "../styles/partials/_main-work";
+@import "../styles/partials/_footer";
