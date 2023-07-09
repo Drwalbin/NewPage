@@ -45,7 +45,7 @@ body {
   color: #fff;
   display: wrap;
   height: auto;
-  background-image: linear-gradient(rgba(243, 129, 129, 0.8509803922), rgba(252, 227, 138, 0.8509803922)), url("/src/images/header-bg.png");
+  background-image: linear-gradient(rgba(243, 129, 129, 0.8509803922), rgba(252, 227, 138, 0.8509803922)), url("./src/images/header-bg.png");
 }
 .header__content {
   justify-content: center;
