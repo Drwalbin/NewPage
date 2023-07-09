@@ -1,0 +1,22 @@
+h1,
+h2,
+h3,
+p,
+div,
+ul {
+  margin: 0px;
+}
+p {
+  color: $fontGrey;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input{
+  border: none;
+}
+.container {
+  margin: 5px 5px;
+  padding: 10px 10px;
+}

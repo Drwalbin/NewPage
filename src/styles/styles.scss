@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+@use "./utils/colors" as *;
+@use "./utils/fonts" as*;
+
 h1,
 h2,
 h3,
@@ -8,32 +10,42 @@ ul {
   margin: 0px;
 }
 p {
-  color: grey;
+  color: $fontGrey;
 }
-
+a {
+  text-decoration: none;
+  color: inherit;
+}
+input{
+  border: none;
+}
 .container {
-  margin: 30px 30px;
-  padding: 30px 170px;
+  margin: 5px 5px;
+  padding: 10px 10px;
 }
 
 .border__line {
-  border-bottom: 3px solid red;
+  border-bottom: 3px solid $borderLine;
   margin: 50px auto;
   width: 70px;
 }
 
-/* heder  */
+body {
+  max-width: 1280px;
+  margin: auto;
+}
 
+/* heder  */
 .header {
   background-repeat: no-repeat;
   background-size: cover;
-  color: white;
+  color: $fontWhite;
   display: wrap;
   height: auto;
 
   background-image: linear-gradient(
-      rgba(243, 129, 129, 0.85),
-      rgba(252, 227, 138, 0.85)
+      $backgroundShadowTop,
+      $backgroundShadowBottom
     ),
     url("/src/images/header-bg.png");
 
@@ -41,35 +53,37 @@ p {
     justify-content: center;
     text-align: center;
     padding: 100px 0px;
+
     &--subtitle {
-      font-size: 40px;
+      font-size: 20px;
       font-family: "Kaushan Script", cursive;
-      color: white;
+      color: $fontWhite;
     }
     &--title {
-      font-size: 100px;
+      font-size: 40px;
       padding: 30px 0px;
     }
 
     &--button {
       background: transparent;
       border-radius: 10px;
-      border: solid white;
-      color: #fff;
+      border: solid $headerButton;
+      color: $headerButton;
       transition: all 0.5s ease-in-out;
 
       &:hover,
       :active {
-        border: solid orange;
-        color: orange;
+        border: solid $headerButtonHover;
+        color: $headerButtonHover;
         box-shadow: 15px;
+        cursor: pointer;
       }
     }
   }
 }
 
 .navigation {
-  color: #fff;
+  color: $fontWhite;
   width: 100%;
   display: flex;
   align-content: center;
@@ -82,35 +96,40 @@ p {
     display: flex;
 
     &--content {
-      border-bottom: solid 2px transparent;
+      border-bottom: solid 5px transparent;
+      padding-bottom: 10px;
+      &:hover {
+        color: $headerNavigationHover;
 
-      &:hover,
-      :active {
-        color: orange;
-        border-bottom: solid 2px orange;
+        border-bottom: solid 5px $headerNavigationHover;
       }
     }
     &--icon {
-      width: 15px;
-      height: 15px;
+      border-bottom: solid 5px transparent;
+      padding-bottom: 10px;
+      width: 18px;
+      height: 18px;
+      vertical-align: text-bottom;
+      &:hover {
+        border-bottom: solid 5px;
+        filter: invert(25%) sepia(35%) saturate(4615%) hue-rotate(359deg)
+          brightness(99%) contrast(104%);
+      }
     }
   }
-}
-.logo {
-  align-items: center;
 }
 
 /* main */
 .section__work {
   text-align: center;
-  margin: 50px 0px;
+  margin: 15px 0px;
 }
 
 .main__subtitle {
   font-family: "Kaushan Script", cursive;
   font-size: 20px;
   padding-bottom: 15px;
-  color: black;
+  color: $fontBlack;
 }
 
 .main__title {
@@ -119,17 +138,22 @@ p {
 
 .work__content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
   grid-gap: 20px;
 
   &--box {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-columns: 1fr auto;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+
     grid-gap: 20px;
 
-    &-title {
+    &--title {
       padding-bottom: 10px;
+      text-align: center;
+    }
+    &--content {
+      text-align: center;
     }
   }
 }
@@ -154,7 +178,7 @@ p {
 
 .who__profile {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   grid-gap: 20px;
 }
 
@@ -163,8 +187,8 @@ p {
   text-align: center;
 
   &--foto {
-    width: 100%;
-    height: 100%;
+    max-width: 280px;
+    margin: auto;
     position: relative;
   }
   &--name {
@@ -189,12 +213,12 @@ p {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.75s;
-  background-image: linear-gradient(#f38181d9, #fce38ad9);
+  background-image: linear-gradient($backgroundShadowTop, $backgroundShadowBottom);
   background-size: cover;
   background-position: center;
   &:hover {
     opacity: 1;
-    box-shadow: 12px 12px 0px -4px #95e1d3;
+    box-shadow: 12px 12px 0px -4px $boxShadow;
     transition: box-shadow 0.3s ease-in-out;
   }
 
@@ -211,10 +235,10 @@ p {
   }
 }
 .icon_box {
-  background-color: #fce38ad9;
+  background-color: $backgroundShadowBottom;
 
   &:hover {
-    background-color: #f38181d9;
+    background-color: $backgroundShadowTop;
   }
 }
 .profile__photo {
@@ -229,42 +253,167 @@ p {
   padding: 30px 0px;
 }
 .footer__content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-gap: 30px;
+  justify-content: center;
 }
 .footer__subscribe {
   height: 40px;
   display: grid;
   grid-auto-flow: column;
-  border-color: grey;
-  color: grey;
+
   &--input {
-    margin-right: 0px;
+    text-align: center;
+    border-right: none;
+    border:solid 1px $footerInputBorder;
+    
+   
+    
   }
   &--button {
-    background-color: #95e1d3;
-    color: white;
-    border: none;
+    background-color: $footerButton;
+    color: $fontWhite;
+    border: $footerButton;
+    cursor: pointer;
+    padding: 10px 30px;
+    &:hover {
+      background-color: $footerButtonHover;
+    }
   }
 }
 
 @media screen and (min-width: 1024px) {
   /* Dodaj tutaj swoje style CSS dla ekranów o szerokości większej lub równej 1024 pikseli */
+  .container {
+    margin: 30px 30px;
+    padding: 30px 150px;
+  }
+
+  .header {
+    &__content {
+      padding: 100px 0px;
+      &--subtitle {
+        font-size: 40px;
+        font-family: "Kaushan Script", cursive;
+        color: $fontWhite;
+      }
+      &--title {
+        font-size: 100px;
+        padding: 30px 0px;
+      }
+    }
+  }
+
+  .who__profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .work__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    text-align: left;
+
+    &--box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 2fr auto;
+
+      &--title {
+        padding-bottom: 10px;
+        text-align: left;
+      }
+      &--subtitle {
+        text-align: left;
+      }
+    }
+  }
+
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   /* Dodaj tutaj swoje style CSS dla ekranów o szerokości od 768 pikseli do 1023 pikseli */
   .container {
-    margin: 30px 30px;
-    padding: 30px 70px;
+    padding: 20px 80px;
+  }
+
+  .header {
+    &__content {
+      padding: 100px 0px;
+      &--subtitle {
+        font-size: 30px;
+        font-family: "Kaushan Script", cursive;
+        color: $fontWhite;
+      }
+      &--title {
+        font-size: 60px;
+        padding: 30px 0px;
+      }
+    }
+  }
+
+  .who__profile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .work__content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+
+    &--box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: center;
+      grid-gap: 20px;
+
+      &--title {
+        padding-bottom: 10px;
+        text-align: left;
+      }
+      &--subtitle {
+        text-align: left;
+      }
+    }
+  }
+
+  .work__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .work__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+
+    &--box {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 2fr auto;
+      grid-gap: 20px;
+
+      &--title {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
   /* Dodaj tutaj swoje style CSS dla ekranów o szerokości poniżej 767 pikseli */
-  .container {
-    margin: 30px 30px;
-    padding: 30px 30px;
+  .navigation {
+    opacity: 0;
   }
 }
