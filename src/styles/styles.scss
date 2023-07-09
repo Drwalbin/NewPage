@@ -1,14 +1,16 @@
-@use "./utils/colors" as *;
-@use "./utils/fonts" as*;
+@import "../styles/utils/_colors.scss";
 
-h1,
-h2,
-h3,
-p,
-div,
-ul {
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+
+  h1,
+  h2,
+  h3,
+  p,
+  div,
+  ul {
   margin: 0px;
 }
+
 p {
   color: $fontGrey;
 }
@@ -16,7 +18,7 @@ a {
   text-decoration: none;
   color: inherit;
 }
-input{
+input {
   border: none;
 }
 .container {
@@ -213,7 +215,10 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.75s;
-  background-image: linear-gradient($backgroundShadowTop, $backgroundShadowBottom);
+  background-image: linear-gradient(
+    $backgroundShadowTop,
+    $backgroundShadowBottom
+  );
   background-size: cover;
   background-position: center;
   &:hover {
@@ -265,10 +270,7 @@ body {
   &--input {
     text-align: center;
     border-right: none;
-    border:solid 1px $footerInputBorder;
-    
-   
-    
+    border: solid 1px $footerInputBorder;
   }
   &--button {
     background-color: $footerButton;
