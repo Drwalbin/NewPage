@@ -129,7 +129,9 @@
             <div class="who__profile">
                 <div class="profile__box">
                     <div class="profile__box--foto">
-                        <img class="profile__photo" src="./src/images/Designer.png" />
+                        <img class="profile__photo" src="./src/images/Designer@1x.png"
+                            srcset="./src/images/Designer@1x.png 1x, ./src/images/Designer@2x.png 2x"
+                            alt="Designer photo" />
                         <div class="profile__box__socialmedia">
 
                             <div class="profile__box__socialmedia--box">
@@ -163,7 +165,9 @@
 
                 <div class="profile__box">
                     <div class="profile__box--foto">
-                        <img class="profile__photo" src="./src/images/Photographer.png" />
+                        <img class="profile__photo" src="./src/images/Photographer@1x.png"
+                            srcset="./src/images/Photographer@1x.png 1x, ./src/images/Photographer@2x.png 2x"
+                            alt="Photographer photo" />
 
                         <div class="profile__box__socialmedia">
                             <div class="profile__box__socialmedia--box">
@@ -198,7 +202,9 @@
 
                 <div class="profile__box">
                     <div class="profile__box--foto">
-                        <img class="profile__photo" src="./src/images/Developer.png" />
+                        <img class="profile__photo" src="./src/images/Developer@1x.png"
+                            srcset="./src/images/Developer@1x.png 1x, ./src/images/Developer@2x.png 2x"
+                            alt="Developer photo" />
 
                         <div class="profile__box__socialmedia">
                             <div class="profile__box__socialmedia--box">
@@ -236,11 +242,15 @@
         <div class="footer">
             <div class="footer__content">
 
-                <span><h5>© MoGo free PSD template by <span class="footer__content--color">Laaqiq</span></h5></span>
+                <span>
+                    <h5>© MoGo free PSD template by <span class="footer__content--color">Laaqiq</span></h5>
+                </span>
 
                 <div class="footer__subscribe">
-                    <input class="footer__subscribe--input" type="text" placeholder="Your email" />
-                    <button class="footer__subscribe--button" type="button">SUBSCRIBE</button>
+                    <input class="footer__subscribe--input form__input" name="name" type="email" id="email"
+                        minlength="4" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" maxlength="50"
+                        placeholder="Your email" autocomplete="off" size="30" required />
+                    <button class="footer__subscribe--button" type="button" >SUBSCRIBE</button>
                 </div>
 
             </div>

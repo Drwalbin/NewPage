@@ -85,6 +85,7 @@ input {
   border: solid #fff;
   color: #fff;
   transition: all 0.5s ease-in-out;
+  padding: 3px 10px;
 }
 .header__content--button:hover,
 .header__content--button :active {
@@ -387,6 +388,14 @@ input {
 }
 .footer__subscribe--button:hover {
   background-color: #ffa500;
+}
+
+.form__input:not(:placeholder-shown):required:valid {
+  color: green;
+}
+
+.form__input:not(:placeholder-shown):required:invalid {
+  color: red;
 }
 
 @media screen and (min-width: 1024px) {
